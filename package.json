@@ -1,0 +1,16 @@
+{
+	"name": "pi-hole-visualizer",
+	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"private": true,
+	"description": "Pi-hole Visualizer",
+	"author": {
+		"name": "Tyler Green",
+		"email": "freshgreenmedia@gmail.com",
+		"url": "http://freshgreenmedia.com/"
+	},
+	"dependencies": {
+		"pigpio": "~2.0.1",
+		"request": "~2.88.0"
+	}
+}
