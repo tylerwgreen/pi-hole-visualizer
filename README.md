@@ -1,7 +1,7 @@
 # pi-hole-visualizer
 Pi-hole visualizer
 
-## Crontab setup:
+## crontab setup:
 ```
 sudo crontab -e
 ```
