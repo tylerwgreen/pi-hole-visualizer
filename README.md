@@ -1,7 +1,7 @@
 # pi-hole-visualizer
 Pi-hole visualizer
 
-##Crontab setup:
+## Crontab setup:
 ```
 sudo crontab -e
 ```
@@ -9,7 +9,7 @@ sudo crontab -e
 0 * * * * /home/pi/pi-hole-visualizer/bin/autostart.sh
 ```
 
-##autostart setup:
+## autostart setup:
 ```
 sudo vim /etc/xdg/lxsession/LXDE-pi/autostart
 ```
