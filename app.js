@@ -14,9 +14,12 @@ var params = {
 		interval: 4000
 	},
 	ledsGpioPins: {
-		red: 18,
-		yellow: 19,
-		green: 20
+		red: 4,
+		yellow: 17,
+		greenA: 22,
+		greenB: 23,
+		greenC: 24,
+		greenD: 27
 	},
 	paths: {
 		app:	path.join(__dirname, '/app/'),
@@ -57,12 +60,18 @@ var App = {
 		ledsGpioPins: {
 			red: null,
 			yellow: null,
-			green: null
+			greenA: null,
+			greenB: null,
+			greenC: null,
+			greenD: null,
 		},
 		leds: {
 			red: null,
 			yellow: null,
-			green: null
+			greenA: null,
+			greenB: null,
+			greenC: null,
+			greenD: null,
 		},
 		
 	},
@@ -76,7 +85,10 @@ var App = {
 		console.log('App.initLeds');
 		App._params.leds.red = new Led(App._params.ledsGpioPins.red);
 		App._params.leds.yellow = new Led(App._params.ledsGpioPins.yellow);
-		App._params.leds.green = new Led(App._params.ledsGpioPins.green);
+		App._params.leds.greenA = new Led(App._params.ledsGpioPins.greenA);
+		App._params.leds.greenB = new Led(App._params.ledsGpioPins.greenB);
+		App._params.leds.greenC = new Led(App._params.ledsGpioPins.greenC);
+		App._params.leds.greenD = new Led(App._params.ledsGpioPins.greenD);
 		console.log();
 	},
 	handleAPIPoll: function(adsBlocked){
@@ -86,17 +98,26 @@ var App = {
 			console.log(adsBlocked + ' ads blocked');
 			App._params.leds.red.breathe(App._params.pollInterval);
 			App._params.leds.yellow.off();
-			App._params.leds.green.off();
+			App._params.leds.greenA.off();
+			App._params.leds.greenB.off();
+			App._params.leds.greenC.off();
+			App._params.leds.greenD.off();
 		}else if(adsBlocked > 0){
 			console.log(adsBlocked + ' ads blocked');
 			App._params.leds.red.off();
 			App._params.leds.yellow.breathe(App._params.pollInterval);
-			App._params.leds.green.off();
+			App._params.leds.greenA.off();
+			App._params.leds.greenB.off();
+			App._params.leds.greenC.off();
+			App._params.leds.greenD.off();
 		}else{
 			console.log('No ads blocked');
 			App._params.leds.red.off();
 			App._params.leds.yellow.off();
-			App._params.leds.green.breathe(App._params.pollInterval);
+			App._params.leds.greenA.breathe(App._params.pollInterval);
+			App._params.leds.greenB.breathe(App._params.pollInterval);
+			App._params.leds.greenC.breathe(App._params.pollInterval);
+			App._params.leds.greenD.breathe(App._params.pollInterval);
 		}
 	},
 	// set a revolving threshold for high amount of ads blocked
