@@ -2,7 +2,8 @@ var request = require('request');
 
 var PiHoleAPI = {
 	params:	{
-		ApiUrl: 'http://192.168.1.2/admin/api.php?summaryRaw',
+		// ApiUrl: 'http://192.168.1.2/admin/api.php?summaryRaw',
+		ApiUrl: 'http://192.168.86.27/admin/api.php?summaryRaw',
 		pollInterval: null,
 		pollCallback: null,
 		adsBlocked: {
